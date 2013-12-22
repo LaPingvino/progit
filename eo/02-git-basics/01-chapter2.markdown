@@ -44,20 +44,20 @@ Vi havas bone fidatan Git-deponejon kaj elprenon aŭ laborkopion de la dosieroj 
 
 Memoru ke ĉiu dosiero en via labordosierujo povas esti en unu el du statoj: *sekvata* aŭ *nesekvata*. *Sekvataj* dosieroj estas dosieroj kiuj estis en la antaŭa momentbildo; ili povas esti *neŝanĝitaj*, *ŝanĝitaj*, aŭ *preparataj*. *Nesekvataj* dosieroj estas ĉio alia — ĉiuj dosieroj en via labordosierujo kiuj ne estis en via lasta momentbildo kaj kiuj ne estas en via preparejo. Kiam vi unue klonas deponejon, ĉiuj viaj dosieroj estos sekvataj kaj neŝanĝitaj ĉar vi ĵus elprenis ilin kaj nenion redaktis.
 
-As you edit files, Git sees them as modified, because you’ve changed them since your last commit. You *stage* these modified files and then commit all your staged changes, and the cycle repeats. This lifecycle is illustrated in Figure 2-1.
+Dum redaktado de dosieroj, Git vidas ilin kiel ŝanĝitaj, ĉar vi ŝanĝis ilin ekde via lasta enmeto. Vi *preparas* ĉi tiujn ŝanĝitajn dosierojn kaj poste enmetas ĉiujn viajn preparatajn ŝanĝojn, kaj la ciklo ripetas sin. Ĉi tiu ciklo montriĝas en bildo 2-1.
 
 Insert 18333fig0201.png
-Figure 2-1. The lifecycle of the status of your files.
+Bildo 2-1. La ciklo de la stato de viaj dosieroj.
 
-### Checking the Status of Your Files ###
+### Kontroli la staton de viaj dosieroj ###
 
-The main tool you use to determine which files are in which state is the `git status` command. If you run this command directly after a clone, you should see something like this:
+La ĉefa ilo kiun vi uzas por decidi kiuj dosieroj estas en kiu stato estas la komando `git status`. Se vi uzas ĉi tiun komandon tuj post klono, vi vidos ion similan al ĉi tio:
 
 	$ git status
 	# On branch master
 	nothing to commit (working directory clean)
 
-This means you have a clean working directory — in other words, no tracked files are modified. Git also doesn’t see any untracked files, or they would be listed here. Finally, the command tells you which branch you’re on. For now, that is always `master`, which is the default; you won’t worry about it here. The next chapter will go over branches and references in detail.
+Tio volas diri ke vi havas puran labordosierujon — alivorte, neniuj sekvataj dosieroj estas ŝanĝitaj. Git ankaŭ ne vidas nesekvatajn dosierojn, alie ili estus montrataj ĉi tie. Fine, la komando diras en kiu branĉo vi estas. Por nun, tio ĉiam estas `master`, kio estas la implicita valoro; vi ne bezonas zorgi pri tio nun. La sekva ĉapitro detale klarigos branĉojn kaj referencojn.
 
 Let’s say you add a new file to your project, a simple `README` file. If the file didn’t exist before, and you run `git status`, you see your untracked file like so:
 
