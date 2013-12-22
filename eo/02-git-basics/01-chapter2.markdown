@@ -72,13 +72,13 @@ Ni diru ke vi aldonas novan dosieron al via projekto, simplan dosieron `README`.
 
 Vi povas vidi ke via nova dosiero `README` estas nesekvata, ĉar ĝi estas sub “Untracked files” en la stata eligo. Nesekvate esence volas diri ke Git vidas dosieron kiun vi ne havis en la antaŭa momentbildo (enmeto); Git ne enkalkulas ĝin al viaj enmetaj momentbildoj ĝis kiam vi diras ke ĝi faru tion. Ĝi funkcias tiel por ke vi ne akcidente enmetu generitajn duumajn dosierojn aŭ aliajn dosierojn kiujn vi ne intencis enkalkuli. Vi ja intencas enkalkuli la dosieron README, do ni eksekvu la dosieron.
 
-### Tracking New Files ###
+### Sekvi novajn dosierojn ###
 
-In order to begin tracking a new file, you use the command `git add`. To begin tracking the `README` file, you can run this:
+Por sekvi novajn dosierojn, vi uzas la komandon `git add`. Por komenci sekvi la dosieron `README`, vi povas uzi ĉi tion:
 
 	$ git add README
 
-If you run your status command again, you can see that your `README` file is now tracked and staged:
+Se vi denove uzas la stato-komandon, vi vidos ke via dosiero `README` nun estas sekvata kaj preparata:
 
 	$ git status
 	# On branch master
@@ -88,11 +88,11 @@ If you run your status command again, you can see that your `README` file is now
 	#	new file:   README
 	#
 
-You can tell that it’s staged because it’s under the “Changes to be committed” heading. If you commit at this point, the version of the file at the time you ran `git add` is what will be in the historical snapshot. You may recall that when you ran `git init` earlier, you then ran `git add (files)` — that was to begin tracking files in your directory. The `git add` command takes a path name for either a file or a directory; if it’s a directory, the command adds all the files in that directory recursively.
+Vi vidas ke ĝi estas preparata ĉar ĝi estas en la listo sub “Changes to be committed”. Se vi enmetas en ĉi tiu momento, la versio de la dosiero en la momento kiam vi uzis `git add` estos en la historia momentbildo. Eble vi memoras ke kiam vi uzis `git init` pli frue, post tio vi uzis `git add (dosieroj)` — tio estis por komenci sekvi dosierojn en via dosierujo. La komando `git add` akceptas padon al ĉu dosiero ĉu dosierujo; se estas dosierujo, la komando aldonas ĉiujn dosierojn en tiu dosierujo rekursive (sinripete, do ankaŭ en la dosierujoj en tiu dosierujo ktp).
 
-### Staging Modified Files ###
+### Prepari ŝanĝitajn dosierojn ###
 
-Let’s change a file that was already tracked. If you change a previously tracked file called `benchmarks.rb` and then run your `status` command again, you get something that looks like this:
+Ni ŝanĝu dosieron kiu jam sekviĝis. Se vi ŝanĝas antaŭe sekvitan dosieron nomata `benchmarks.rb` kaj poste reuzas la komandon `status`, vi vidos ion kio similas al ĉi tio:
 
 	$ git status
 	# On branch master
@@ -107,7 +107,7 @@ Let’s change a file that was already tracked. If you change a previously track
 	#	modified:   benchmarks.rb
 	#
 
-The `benchmarks.rb` file appears under a section named “Changes not staged for commit” — which means that a file that is tracked has been modified in the working directory but not yet staged. To stage it, you run the `git add` command (it’s a multipurpose command — you use it to begin tracking new files, to stage files, and to do other things like marking merge-conflicted files as resolved). Let’s run `git add` now to stage the `benchmarks.rb` file, and then run `git status` again:
+La dosiero `benchmarks.rb` aperas en sekcio nomata “Changes not staged for commit” — kaj tio volas diri ke sekvata dosiero ŝanĝiĝis en la labordosierujo, sed ĝi ankoraŭ ne prepariĝas. Por prepari ĝin, vi uzas la komandon `git add` (ĝi estas plurfunkcia — vi uzas ĝin por komenci sekvi novajn dosierojn, por preparigi dosierojn kaj por fari aliajn aferojn kiel marki kunfandkonfliktitajn dosierojn kiel senkonfliktaj). Ni uzu `git add` nun por preparigi la dosieron `benchmarks.rb`, kaj poste ni uzu denove `git status`:
 
 	$ git add benchmarks.rb
 	$ git status
@@ -119,7 +119,7 @@ The `benchmarks.rb` file appears under a section named “Changes not staged for
 	#	modified:   benchmarks.rb
 	#
 
-Both files are staged and will go into your next commit. At this point, suppose you remember one little change that you want to make in `benchmarks.rb` before you commit it. You open it again and make that change, and you’re ready to commit. However, let’s run `git status` one more time:
+Ambaŭ dosieroj estas preparataj kaj eniros en vian sekvan enmeton. Ĉi-momente, imagu ke vi memoris malgrandan ŝanĝon kiun vi volas fari en `benchmarks.rb` antaŭ ol enmeti ĝin. Vi malfermas ĝin denove kaj faras tiun ŝanĝon, kaj vi pretas por enmeti. Tamen, ni uzu jen pluan fojon `git status`:
 
 	$ vim benchmarks.rb
 	$ git status
@@ -136,7 +136,7 @@ Both files are staged and will go into your next commit. At this point, suppose 
 	#	modified:   benchmarks.rb
 	#
 
-What the heck? Now `benchmarks.rb` is listed as both staged and unstaged. How is that possible? It turns out that Git stages a file exactly as it is when you run the `git add` command. If you commit now, the version of `benchmarks.rb` as it was when you last ran the `git add` command is how it will go into the commit, not the version of the file as it looks in your working directory when you run `git commit`. If you modify a file after you run `git add`, you have to run `git add` again to stage the latest version of the file:
+Kio diable? Nun `benchmarks.rb` estas listigita kiel kaj preparata kaj nepreparata. Kiel tio eblas? Fakte Git preparigas dosieron ekzakte kiel ĝi estas kiam vi uzas la komandon `git add`. Se vi enmetas nun, la versio de `benchmarks.rb` kiel ĝi estis kiam vi laste uzis la komandon `git add` eniros la enmeton, ne la versio kia ĝi estas en via labordosierujo kiam vi uzas `git commit`. Se vi ŝanĝas dosieron post uzado de `git add`, vi devas reuzi `git add` por preparigi la lastan version de la dosiero:
 
 	$ git add benchmarks.rb
 	$ git status
