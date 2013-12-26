@@ -59,7 +59,7 @@ La ĉefa ilo kiun vi uzas por decidi kiuj dosieroj estas en kiu stato estas la k
 
 Tio volas diri ke vi havas puran labordosierujon — alivorte, neniuj sekvataj dosieroj estas ŝanĝitaj. Git ankaŭ ne vidas nesekvatajn dosierojn, alie ili estus montrataj ĉi tie. Fine, la komando diras en kiu branĉo vi estas. Por nun, tio ĉiam estas `master`, kio estas la implicita valoro; vi ne bezonas zorgi pri tio nun. La sekva ĉapitro detale klarigos branĉojn kaj referencojn.
 
-Let’s say you add a new file to your project, a simple `README` file. If the file didn’t exist before, and you run `git status`, you see your untracked file like so:
+Ni diru ke vi aldonas novan dosieron al via projekto, simplan dosieron `README`. Se la dosiero antaŭe ne ekzistis, kaj vi uzas `git status`, vi vidas vian nesekvatan dosieron tiel:
 
 	$ vim README
 	$ git status
@@ -70,7 +70,7 @@ Let’s say you add a new file to your project, a simple `README` file. If the f
 	#	README
 	nothing added to commit but untracked files present (use "git add" to track)
 
-You can see that your new `README` file is untracked, because it’s under the “Untracked files” heading in your status output. Untracked basically means that Git sees a file you didn’t have in the previous snapshot (commit); Git won’t start including it in your commit snapshots until you explicitly tell it to do so. It does this so you don’t accidentally begin including generated binary files or other files that you did not mean to include. You do want to start including README, so let’s start tracking the file.
+Vi povas vidi ke via nova dosiero `README` estas nesekvata, ĉar ĝi estas sub “Untracked files” en la stata eligo. Nesekvate esence volas diri ke Git vidas dosieron kiun vi ne havis en la antaŭa momentbildo (enmeto); Git ne enkalkulas ĝin al viaj enmetaj momentbildoj ĝis kiam vi diras ke ĝi faru tion. Ĝi funkcias tiel por ke vi ne akcidente enmetu generitajn duumajn dosierojn aŭ aliajn dosierojn kiujn vi ne intencis enkalkuli. Vi ja intencas enkalkuli la dosieron README, do ni eksekvu la dosieron.
 
 ### Tracking New Files ###
 
