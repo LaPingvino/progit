@@ -148,26 +148,26 @@ Kio diable? Nun `benchmarks.rb` estas listigita kiel kaj preparata kaj neprepara
 	#	modified:   benchmarks.rb
 	#
 
-### Ignoring Files ###
+### Ignori dosierojn ###
 
-Often, you’ll have a class of files that you don’t want Git to automatically add or even show you as being untracked. These are generally automatically generated files such as log files or files produced by your build system. In such cases, you can create a file listing patterns to match them named `.gitignore`.  Here is an example `.gitignore` file:
+Ofte estos dosieroj de kiuj vi ne volas ke Git auxtomate aldonu ilin aux ecx montru ilin kiel nesekvataj. Kutime tio estas auxtomate generitaj dosieroj, kiel ekzemple protokoloj kaj dosieroj produktitaj fare de via konstrusistemo. Tiukaze vi povas krei dosieron nomata `.gitignore` kiu listigas dosiertipojn. Jen ekzemplo de la dosiero `.gitignore`:
 
 	$ cat .gitignore
 	*.[oa]
 	*~
 
-The first line tells Git to ignore any files ending in `.o` or `.a` — *object* and *archive* files that may be the product of building your code. The second line tells Git to ignore all files that end with a tilde (`~`), which is used by many text editors such as Emacs to mark temporary files. You may also include a `log`, `tmp`, or `pid` directory; automatically generated documentation; and so on. Setting up a `.gitignore` file before you get going is generally a good idea so you don’t accidentally commit files that you really don’t want in your Git repository.
+La unua linio diras al Git ignori cxiujn dosierojn kiuj finigxas je `.o` aux `.a` — *objektaj* kaj *arhxivaj* dosieroj kiuj povas esti produkto de la konstruado de via kodo. La dua linio diras al Git ignori cxiujn dosierojn kies nomo finigxas je tildo (`~`), tio estas uzata de tekstredaktiloj kiel Emacs por marki portempajn dosierojn. Vi ankaux povus aldoni dosierujojn `log`, `tmp` aux `pid`, auxtomate generitajn helpdokumentojn kaj tiel plu. Konfiguri dosieron `.gitignore` antaux ol eklabori kutime estas bona ideo, cxar tiel vi ne akcidente enmetos dosierojn kiujn vi vere ne volas havi en via Git-deponejo.
 
-The rules for the patterns you can put in the `.gitignore` file are as follows:
+La reguloj por la linieroj de `.gitignore` estas jenaj:
 
-*	Blank lines or lines starting with `#` are ignored.
-*	Standard glob patterns work.
-*	You can end patterns with a forward slash (`/`) to specify a directory.
-*	You can negate a pattern by starting it with an exclamation point (`!`).
+*	Malplenaj linioj aux tiuj kiuj komencigxas per `#` estas ignorataj.
+*	Kutimaj sercxformatajxoj funkcias.
+*	Vi povas fini linion per suprenstreko (`/`) por indiki dosierujon.
+*	Vi povas maligi linion antauxmetante krisignon (`!`).
 
-Glob patterns are like simplified regular expressions that shells use. An asterisk (`*`) matches zero or more characters; `[abc]` matches any character inside the brackets (in this case `a`, `b`, or `c`); a question mark (`?`) matches a single character; and brackets enclosing characters separated by a hyphen(`[0-9]`) matches any character in the range (in this case 0 through 9) .
+Sercxformatajxoj estas kiel simpligitaj regulaj esprimoj uzataj de sxeloj. Steleto (`*`) kongruas kun nulo aux pli da simboloj, `[abc]` kongruas kun ajna simbolo ene de la hokaj parentezoj (cxi-kaze `a`, `b`, aux `c`), demandosigno (`?`) kongruas kun unu kaj nur unu simbolo kaj hokaj parentezoj kiuj enhavas simbolojn dividitajn pere de streketo (`[0-9]`) kongruas kun ajna simbolo en tiu atingo (cxi-kaze 0 gxis 9) .
 
-Here is another example `.gitignore` file:
+Jen alia ekzemplo de dosiero `.gitignore`:
 
 	# a comment - this is ignored
 	# no .a files
@@ -183,11 +183,11 @@ Here is another example `.gitignore` file:
 	# ignore all .txt files in the doc/ directory
 	doc/**/*.txt
 
-A `**/` pattern is available in Git since version 1.8.2.
+Simbolo `**/` haveblas en Git ekde versio 1.8.2.
 
-### Viewing Your Staged and Unstaged Changes ###
+### Vidi viajn preparatajn kaj nepreparatajn sxangxojn ###
 
-If the `git status` command is too vague for you — you want to know exactly what you changed, not just which files were changed — you can use the `git diff` command. We’ll cover `git diff` in more detail later; but you’ll probably use it most often to answer these two questions: What have you changed but not yet staged? And what have you staged that you are about to commit? Although `git status` answers those questions very generally, `git diff` shows you the exact lines added and removed — the patch, as it were.
+Se la komando `git status` diras maltro al vi — vi volas scii ekzakte kion vi sxangxis, ne nur kiuj dosieroj sxangxigxis — vi povas uzi la komandon `git diff`. Ni pli detale parolos pri `git diff` poste; but you’ll probably use it most often to answer these two questions: What have you changed but not yet staged? And what have you staged that you are about to commit? Although `git status` answers those questions very generally, `git diff` shows you the exact lines added and removed — the patch, as it were.
 
 Let’s say you edit and stage the `README` file again and then edit the `benchmarks.rb` file without staging it. If you run your `status` command, you once again see something like this:
 
