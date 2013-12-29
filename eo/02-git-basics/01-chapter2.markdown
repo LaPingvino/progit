@@ -150,22 +150,22 @@ Kio diable? Nun `benchmarks.rb` estas listigita kiel kaj preparata kaj neprepara
 
 ### Ignori dosierojn ###
 
-Ofte estos dosieroj de kiuj vi ne volas ke Git auxtomate aldonu ilin aux ecx montru ilin kiel nesekvataj. Kutime tio estas auxtomate generitaj dosieroj, kiel ekzemple protokoloj kaj dosieroj produktitaj fare de via konstrusistemo. Tiukaze vi povas krei dosieron nomata `.gitignore` kiu listigas dosiertipojn. Jen ekzemplo de la dosiero `.gitignore`:
+Ofte estos dosieroj de kiuj vi ne volas ke Git aŭtomate aldonu ilin aŭ eĉ montru ilin kiel nesekvataj. Kutime tio estas aŭtomate generitaj dosieroj, kiel ekzemple protokoloj kaj dosieroj produktitaj fare de via konstrusistemo. Tiukaze vi povas krei dosieron nomata `.gitignore` kiu listigas dosiertipojn. Jen ekzemplo de la dosiero `.gitignore`:
 
 	$ cat .gitignore
 	*.[oa]
 	*~
 
-La unua linio diras al Git ignori cxiujn dosierojn kiuj finigxas je `.o` aux `.a` — *objektaj* kaj *arhxivaj* dosieroj kiuj povas esti produkto de la konstruado de via kodo. La dua linio diras al Git ignori cxiujn dosierojn kies nomo finigxas je tildo (`~`), tio estas uzata de tekstredaktiloj kiel Emacs por marki portempajn dosierojn. Vi ankaux povus aldoni dosierujojn `log`, `tmp` aux `pid`, auxtomate generitajn helpdokumentojn kaj tiel plu. Konfiguri dosieron `.gitignore` antaux ol eklabori kutime estas bona ideo, cxar tiel vi ne akcidente enmetos dosierojn kiujn vi vere ne volas havi en via Git-deponejo.
+La unua linio diras al Git ignori ĉiujn dosierojn kiuj finiĝas je `.o` aŭ `.a` — *objektaj* kaj *arĥivaj* dosieroj kiuj povas esti produkto de la konstruado de via kodo. La dua linio diras al Git ignori ĉiujn dosierojn kies nomo finiĝas je tildo (`~`), tio estas uzata de tekstredaktiloj kiel Emacs por marki portempajn dosierojn. Vi ankaŭ povus aldoni dosierujojn `log`, `tmp` aŭ `pid`, aŭtomate generitajn helpdokumentojn kaj tiel plu. Konfiguri dosieron `.gitignore` antaŭ ol eklabori kutime estas bona ideo, ĉar tiel vi ne akcidente enmetos dosierojn kiujn vi vere ne volas havi en via Git-deponejo.
 
 La reguloj por la linieroj de `.gitignore` estas jenaj:
 
-*	Malplenaj linioj aux tiuj kiuj komencigxas per `#` estas ignorataj.
-*	Kutimaj sercxformatajxoj funkcias.
+*	Malplenaj linioj aŭ tiuj kiuj komenciĝas per `#` estas ignorataj.
+*	Kutimaj serĉformataĵoj funkcias.
 *	Vi povas fini linion per suprenstreko (`/`) por indiki dosierujon.
-*	Vi povas maligi linion antauxmetante krisignon (`!`).
+*	Vi povas maligi linion antaŭmetante krisignon (`!`).
 
-Sercxformatajxoj estas kiel simpligitaj regulaj esprimoj uzataj de sxeloj. Steleto (`*`) kongruas kun nulo aux pli da simboloj, `[abc]` kongruas kun ajna simbolo ene de la hokaj parentezoj (cxi-kaze `a`, `b`, aux `c`), demandosigno (`?`) kongruas kun unu kaj nur unu simbolo kaj hokaj parentezoj kiuj enhavas simbolojn dividitajn pere de streketo (`[0-9]`) kongruas kun ajna simbolo en tiu atingo (cxi-kaze 0 gxis 9) .
+Serĉformataĵoj estas kiel simpligitaj regulaj esprimoj uzataj de ŝeloj. Steleto (`*`) kongruas kun nulo aŭ pli da simboloj, `[abc]` kongruas kun ajna simbolo ene de la hokaj parentezoj (ĉi-kaze `a`, `b`, aŭ `c`), demandosigno (`?`) kongruas kun unu kaj nur unu simbolo kaj hokaj parentezoj kiuj enhavas simbolojn dividitajn pere de streketo (`[0-9]`) kongruas kun ajna simbolo en tiu atingo (ĉi-kaze 0 ĝis 9) .
 
 Jen alia ekzemplo de dosiero `.gitignore`:
 
@@ -185,9 +185,9 @@ Jen alia ekzemplo de dosiero `.gitignore`:
 
 Simbolo `**/` haveblas en Git ekde versio 1.8.2.
 
-### Vidi viajn preparatajn kaj nepreparatajn sxangxojn ###
+### Vidi viajn preparatajn kaj nepreparatajn ŝanĝojn ###
 
-Se la komando `git status` diras maltro al vi — vi volas scii ekzakte kion vi sxangxis, ne nur kiuj dosieroj sxangxigxis — vi povas uzi la komandon `git diff`. Ni pli detale parolos pri `git diff` poste; but you’ll probably use it most often to answer these two questions: What have you changed but not yet staged? And what have you staged that you are about to commit? Although `git status` answers those questions very generally, `git diff` shows you the exact lines added and removed — the patch, as it were.
+Se la komando `git status` diras maltro al vi — vi volas scii ekzakte kion vi ŝanĝis, ne nur kiuj dosieroj ŝanĝiĝis — vi povas uzi la komandon `git diff`. Ni pli detale parolos pri `git diff` poste; but you’ll probably use it most often to answer these two questions: What have you changed but not yet staged? And what have you staged that you are about to commit? Although `git status` answers those questions very generally, `git diff` shows you the exact lines added and removed — the patch, as it were.
 
 Let’s say you edit and stage the `README` file again and then edit the `benchmarks.rb` file without staging it. If you run your `status` command, you once again see something like this:
 
